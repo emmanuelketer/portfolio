@@ -64,5 +64,26 @@
     });
   }
 
+  // Typewriter
+  var typer = document.getElementById("typer");
+  if (typer) {
+    var words = typer.getAttribute("data-words").split("|");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      typer.textContent = words.join(" · ");
+    } else {
+      var w = 0, c = 0, deleting = false;
+      (function tick() {
+        var word = words[w];
+        c += deleting ? -1 : 1;
+        typer.textContent = word.slice(0, c);
+        var delay = deleting ? 45 : 90;
+        if (!deleting && c === word.length) { deleting = true; delay = 1400; }
+        else if (deleting && c === 0) { deleting = false; w = (w + 1) % words.length; delay = 350; }
+        setTimeout(tick, delay);
+      })();
+    }
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

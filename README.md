@@ -7,7 +7,7 @@ Personal portfolio website: a static site (HTML, CSS, vanilla JS) with no build 
 - `index.html`: all content (about, experience, projects, skills, education, contact)
 - `styles.css`: styling, with light/dark themes and responsive layout
 - `app.js`: theme toggle, mobile menu, scroll reveal, active nav link
-- `assets/`: images. Add your portrait as `assets/photo.jpg` (square, ~800px). Until then an "EK" placeholder shows.
+- `assets/`: images. Contains `DP.jpeg` (portrait shown in the hero) and `Emmanuel_Keter_Resume.docx` (linked as the Download CV button).
 
 ## Run locally
 
